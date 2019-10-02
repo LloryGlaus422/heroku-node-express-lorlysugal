@@ -5,13 +5,14 @@ var path = require('path');
 var port = process.env.PORT || 3000;
 // var mqtt = require('mqtt');
 
-app.use(express.static(path.join(__dirname, './scripts')));
+
 
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
  });
 
+ app.use(express.static('public'));
 
 http.listen(port, function(){
   console.log('listening on *: ' + port);
